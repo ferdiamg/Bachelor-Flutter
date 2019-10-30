@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="202.152" height="202.152">
+  <defs/>
+  <defs>
+    <linearGradient id="a" x1=".054" x2="1.007" y1=".889" y2=".057" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0067ff"/>
+      <stop offset=".174" stop-color="#006fff"/>
+      <stop offset=".449" stop-color="#0085ff"/>
+      <stop offset=".789" stop-color="#0af"/>
+      <stop offset=".896" stop-color="#00b8ff"/>
+    </linearGradient>
+    <linearGradient id="b" x1=".06" x2=".952" y1=".803" y2=".197" xlink:href="#a"/>
+  </defs>
+  <g transform="translate(-3554.192 -2795.29)">
+    <circle cx="101.076" cy="101.076" r="101.076" fill="url(#a)" transform="translate(3554.192 2795.29)"/>
+    <path fill="#fff" d="M3641.878 2823.39l-35.859 24.854a24.276 24.276 0 00-10.448 19.954v56.337a24.281 24.281 0 0010.448 19.956l35.859 24.853a24.281 24.281 0 0027.532.088l34.98-23.915a24.281 24.281 0 0010.576-20.043v-58.213a24.276 24.276 0 00-10.576-20.042l-34.98-23.915a24.277 24.277 0 00-27.532.086z"/>
+    <path fill="url(#b)" d="M3906.979 3015.9l-38.319-26.2-39.171 27.149v59.818l39.171 27.148 38.319-26.2v-16.63l-23.785-14.23 23.785-14.231zm-41.619 22.149v17.422l23.758 14.214-20.393 13.94-22.6-15.666v-42.4l22.6-15.666 20.393 13.941z" transform="translate(-212.963 -150.393)"/>
+  </g>
+</svg>
