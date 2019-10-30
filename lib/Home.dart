@@ -10,8 +10,8 @@ class Home extends StatelessWidget {
       body: Ble(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Container(
-        height: 80.0,
-        width: 80.0,
+        height: 76.0,
+        width: 76.0,
         decoration: new BoxDecoration(
           boxShadow: [
             BoxShadow(
@@ -34,11 +34,11 @@ class Home extends StatelessWidget {
         items: [
           FABBottomAppBarItem(
               svgPath: 'assets/ble.svg',
-              height: 27,
+              height: 25,
           ),
           FABBottomAppBarItem(
               svgPath: 'assets/qr.svg',
-              height: 30,
+              height: 31,
           ),
         ],
       ),
