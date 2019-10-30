@@ -1,6 +1,7 @@
+import 'package:fl_final/widgets/FABBottomAppBar.dart';
 import 'package:flutter/material.dart';
 import 'screens/Ble.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'widgets/FABBottomAppBar.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -28,24 +29,23 @@ class Home extends StatelessWidget {
           onPressed: () {},
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-            SvgPicture.asset(
-              'assets/ble.svg',
-              height: 26,
-              allowDrawingOutsideViewBox: true,
-            ),
-            SvgPicture.asset(
-              'assets/qr.svg',
+      bottomNavigationBar: FABBottomAppBar(
+        onTabSelected: _selectedTab,
+        items: [
+          FABBottomAppBarItem(
+              svgPath: 'assets/ble.svg',
+              height: 27,
+          ),
+          FABBottomAppBarItem(
+              svgPath: 'assets/qr.svg',
               height: 30,
-              allowDrawingOutsideViewBox: true,
-            )
-          ]),
-        ),
+          ),
+        ],
       ),
     );
+  }
+
+  void _selectedTab(int value) {
+    print("Clicked tab: " + value.toString());
   }
 }
