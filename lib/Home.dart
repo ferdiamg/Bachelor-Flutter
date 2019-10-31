@@ -1,13 +1,31 @@
 import 'package:fl_final/widgets/FABBottomAppBar.dart';
 import 'package:flutter/material.dart';
 import 'screens/Ble.dart';
+import 'screens/Qr.dart';
 import 'widgets/FABBottomAppBar.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int _screen = 0;
+
+  void _handleTap(value) {
+    setState(() {
+      _screen = value;
+    });
+  }
+
+  void _selectedTab(int value) {
+    _handleTap(value);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Ble(),
+      body: _screen==0 ? Ble() : Qr(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Container(
         height: 76.0,
@@ -33,19 +51,15 @@ class Home extends StatelessWidget {
         onTabSelected: _selectedTab,
         items: [
           FABBottomAppBarItem(
-              svgPath: 'assets/ble.svg',
-              height: 25,
+            svgPath: 'assets/ble.svg',
+            height: 25,
           ),
           FABBottomAppBarItem(
-              svgPath: 'assets/qr.svg',
-              height: 31,
+            svgPath: 'assets/qr.svg',
+            height: 31,
           ),
         ],
       ),
     );
-  }
-
-  void _selectedTab(int value) {
-    print("Clicked tab: " + value.toString());
   }
 }
