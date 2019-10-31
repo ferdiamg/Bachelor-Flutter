@@ -1,16 +1,17 @@
-Fl_final
+# Bachelor-Flutter
+### My bachelor thesis project (Bluetooth Low Energy with iBeacons, QR Scanner) implemented in Google's React Native for iOS and Android
 
-A new Flutter project.
+## Dependencies
+* flutter_svg: ^0.14.3
 
-## Getting Started
+## Getting started
+To install all needed node_modules and dependencies:
+1. `flutter run`
 
-This project is a starting point for a Flutter application.
+## Important/Troubleshooting:
+* Set Flutter SDK correctly: https://flutter.dev/docs/get-started/install
 
-A few resources to get you started if this is your first Flutter project:
+* code signing needed in XCode
+* iOS 13 iOS needs AlwaysUsageBluetooth in info.plist when using BLE
+* same in Android
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
