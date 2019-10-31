@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Qr extends StatelessWidget {
   @override
@@ -13,15 +14,21 @@ class Qr extends StatelessWidget {
               "Place the QR code inside the area",
               style: TextStyle(
                   color: Color(0x4A4A4A).withOpacity(1),
-                  fontSize: 18,
+                  fontSize: 20,
                   fontWeight: FontWeight.w700),
             ),
-            Text(
-              "Scanning will start automatically",
-              style: TextStyle(
-                  color: Color(0x4A4A4A).withOpacity(1),
-                  fontSize: 16,
-            )),
+            Padding(
+              padding: const EdgeInsets.only(top: 5.0),
+              child: Text("Scanning will start automatically",
+                  style: TextStyle(
+                    color: Color(0xCFCFCF).withOpacity(1),
+                    fontSize: 16,
+                  )),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 80.0),
+              child: SvgPicture.asset('assets/qrmarker.svg', height: 290),
+            ),
           ],
         ),
       ),

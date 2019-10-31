@@ -44,6 +44,7 @@ flutter:
 
   assets:
     - assets/wifi.svg
+    - assets/qrmarker.svg
     - assets/ble.svg
     - assets/qr.svg
     - assets/icon.png

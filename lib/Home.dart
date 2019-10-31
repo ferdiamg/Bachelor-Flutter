@@ -6,7 +6,9 @@ import 'widgets/FABBottomAppBar.dart';
 
 class Home extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _HomeState createState() {
+    return _HomeState();
+  }
 }
 
 class _HomeState extends State<Home> {
