@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 
 class Ble extends StatefulWidget {
+
+
   @override
   _BleState createState() => _BleState();
 }
@@ -10,7 +12,18 @@ class Ble extends StatefulWidget {
 class _BleState extends State<Ble> {
   bool _beaconFound = false;
 
+  @override
+   void setState(fn) {
+    if(mounted){
+      super.setState(fn);
+    }
+  }
+
   void _scanBLE() {
+    setState(() {
+      _beaconFound = false;
+    });
+
     FlutterBlue flutterBlue = FlutterBlue.instance;
     // Start scanning
     flutterBlue.startScan(timeout: Duration(seconds: 1));
@@ -131,6 +144,15 @@ class _BleState extends State<Ble> {
                 ),
               ),
             ),
+            Text(
+              "T-Rex",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  height: 1.7,
+                  color: Color(0x4A4A4A).withOpacity(1),
+                  fontSize: 27,
+                  fontWeight: FontWeight.w700),
+            ),
             Container(
               width: 270,
               child: Center(
@@ -138,10 +160,10 @@ class _BleState extends State<Ble> {
                   "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores dolores dolores et ea rebum. Stet clita kasd gubergren, no sea Lorem ipsum dolor sit amet.",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    height: 1.7,
-                    color: Color(0xCFCFCF).withOpacity(1),
-                    fontSize: 15.5,
-                    fontWeight: FontWeight.w600),
+                      height: 1.7,
+                      color: Color(0xCFCFCF).withOpacity(1),
+                      fontSize: 15.5,
+                      fontWeight: FontWeight.w600),
                 ),
               ),
             )

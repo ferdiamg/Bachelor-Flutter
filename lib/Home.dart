@@ -13,7 +13,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _screen = 0;
-
   void _handleTap(value) {
     setState(() {
       _screen = value;

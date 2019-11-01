@@ -3,6 +3,7 @@
 
 ## Dependencies
 * flutter_svg: ^0.14.3
+* flutter_blue: 0.6.2 (^0.6.3+1 crashes)
 
 ## Getting started
 To install all needed node_modules and dependencies:
