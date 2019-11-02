@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'dart:io';
 
 class FABBottomAppBarItem {
   FABBottomAppBarItem({this.svgPath, this.height});
@@ -78,7 +79,7 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
+                  padding: Platform.isIOS ? const EdgeInsets.only(top: 20.0) : const EdgeInsets.only(top: 0.0),
                   child: SvgPicture.asset(item.svgPath, height: item.height, color: color),
                 ),
               ],
