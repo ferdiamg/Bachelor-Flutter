@@ -36,10 +36,10 @@ class _BleState extends State<Ble> {
           setState(() {
             _beaconFound = true;
           });
-          print("Gerät: " +
-              result.device.name +
-              " Entf. :" +
-              result.rssi.toString());
+          // print("Gerät: " +
+          //     result.device.name +
+          //     " Entf. :" +
+          //     result.rssi.toString());
         }
       });
     });
