@@ -1,28 +1,53 @@
 PODS:
+  - "!ProtoCompiler (3.8.0)":
+    - Protobuf (~> 3.0)
   - barcode_scan (0.0.1):
     - Flutter
     - MTBBarcodeScanner
   - Flutter (1.0.0)
+  - flutter_blue (0.0.1):
+    - "!ProtoCompiler"
+    - Flutter
+    - flutter_blue/Protos (= 0.0.1)
+  - flutter_blue/Protos (0.0.1):
+    - "!ProtoCompiler"
+    - Flutter
+    - Protobuf
   - MTBBarcodeScanner (5.0.11)
+  - Protobuf (3.10.0)
+  - shared_preferences (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - barcode_scan (from `.symlinks/plugins/barcode_scan/ios`)
   - Flutter (from `.symlinks/flutter/ios`)
+  - flutter_blue (from `.symlinks/plugins/flutter_blue/ios`)
+  - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - "!ProtoCompiler"
     - MTBBarcodeScanner
+    - Protobuf
 
 EXTERNAL SOURCES:
   barcode_scan:
     :path: ".symlinks/plugins/barcode_scan/ios"
   Flutter:
     :path: ".symlinks/flutter/ios"
+  flutter_blue:
+    :path: ".symlinks/plugins/flutter_blue/ios"
+  shared_preferences:
+    :path: ".symlinks/plugins/shared_preferences/ios"
 
 SPEC CHECKSUMS:
+  "!ProtoCompiler": 7fc49078ec544d0347264496f6cd09b8132536b5
   barcode_scan: 33f586d02270046fc6559135038b34b5754eaa4f
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_blue: b823e65d0fe2d8731d8a159ef8eb9d4c0ec6c9ad
   MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
+  Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
+  shared_preferences: 430726339841afefe5142b9c1f50cb6bd7793e01
 
 PODFILE CHECKSUM: b6a0a141693093b304368d08511b46cf3d1d0ac5
 

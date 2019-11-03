@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_blue/flutter_blue.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Ble extends StatefulWidget {
-
-
   @override
   _BleState createState() => _BleState();
 }
@@ -13,13 +12,34 @@ class _BleState extends State<Ble> {
   bool _beaconFound = false;
 
   @override
-   void setState(fn) {
-    if(mounted){
+  void setState(fn) {
+    if (mounted) {
       super.setState(fn);
     }
   }
 
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  _setBeaconFound() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('foundBeacon', true);
+  }
+
+  _setBeaconNotFound() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('foundBeacon', false);
+  }
+
+  Future<bool> _getBeaconFoundStatus() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getBool('foundBeacon') ?? false;
+  }
+
   void _scanBLE() {
+    _setBeaconNotFound();
     setState(() {
       _beaconFound = false;
     });
@@ -33,13 +53,10 @@ class _BleState extends State<Ble> {
       // do something with scan result
       scanResult.forEach((result) {
         if (result.device.name == "AMG iBeacon") {
+          _setBeaconFound();
           setState(() {
             _beaconFound = true;
           });
-          // print("Gerät: " +
-          //     result.device.name +
-          //     " Entf. :" +
-          //     result.rssi.toString());
         }
       });
     });
@@ -52,7 +69,11 @@ class _BleState extends State<Ble> {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        _beaconFound ? _renderInfo() : renderNotFound(),
+        FutureBuilder<bool>(
+            future: _getBeaconFoundStatus(),
+            builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
+              return snapshot.data == false ? renderNotFound() : _renderInfo();
+            }),
         Padding(
           padding: const EdgeInsets.only(bottom: 105.0),
           child: Align(
