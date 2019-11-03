@@ -22,4 +22,4 @@ To install all needed node_modules and dependencies:
 Funktion:
 * State Management wegen beaconFound bessere Lösung finden statt SharedPreferences (Provider)
 Design:
-*QR View anpassen (animieren, Größe, etc.)
+* QR View anpassen (animieren, Größe, etc.)
