@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_blue/flutter_blue.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
+import './BeaconState.dart';
 
 class Ble extends StatefulWidget {
   @override
@@ -9,8 +10,6 @@ class Ble extends StatefulWidget {
 }
 
 class _BleState extends State<Ble> {
-  bool _beaconFound = false;
-
   @override
   void setState(fn) {
     if (mounted) {
@@ -23,26 +22,8 @@ class _BleState extends State<Ble> {
     super.initState();
   }
 
-  _setBeaconFound() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('foundBeacon', true);
-  }
-
-  _setBeaconNotFound() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('foundBeacon', false);
-  }
-
-  Future<bool> _getBeaconFoundStatus() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getBool('foundBeacon') ?? false;
-  }
-
   void _scanBLE() {
-    _setBeaconNotFound();
-    setState(() {
-      _beaconFound = false;
-    });
+    Provider.of<BeaconState>(context, listen: false).setBeaconStatus(false);
 
     FlutterBlue flutterBlue = FlutterBlue.instance;
     // Start scanning
@@ -53,10 +34,8 @@ class _BleState extends State<Ble> {
       // do something with scan result
       scanResult.forEach((result) {
         if (result.device.name == "AMG iBeacon") {
-          _setBeaconFound();
-          setState(() {
-            _beaconFound = true;
-          });
+          Provider.of<BeaconState>(context, listen: false)
+              .setBeaconStatus(true);
         }
       });
     });
@@ -69,11 +48,13 @@ class _BleState extends State<Ble> {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        FutureBuilder<bool>(
-            future: _getBeaconFoundStatus(),
-            builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
-              return snapshot.data == false ? renderNotFound() : _renderInfo();
-            }),
+        Consumer<BeaconState>(
+          builder: (context, beaconState, child) {
+            return beaconState.beaconFound()
+                ? _renderInfo()
+                : _renderNotFound();
+          },
+        ),
         Padding(
           padding: const EdgeInsets.only(bottom: 105.0),
           child: Align(
@@ -100,7 +81,7 @@ class _BleState extends State<Ble> {
     );
   }
 
-  renderNotFound() {
+  _renderNotFound() {
     return Center(
       child: Padding(
         padding: const EdgeInsets.only(bottom: 110.0),
