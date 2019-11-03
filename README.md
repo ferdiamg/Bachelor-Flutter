@@ -19,8 +19,5 @@ To install all needed node_modules and dependencies:
 * same in Android
 
 ## Todo
-Funktion:
-* State Management wegen beaconFound bessere Lösung finden statt SharedPreferences (Provider)
-
 Design:
 * QR View anpassen (animieren, Größe, etc.)
