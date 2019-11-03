@@ -44,7 +44,7 @@ SPEC CHECKSUMS:
   "!ProtoCompiler": 7fc49078ec544d0347264496f6cd09b8132536b5
   barcode_scan: 33f586d02270046fc6559135038b34b5754eaa4f
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  flutter_blue: b823e65d0fe2d8731d8a159ef8eb9d4c0ec6c9ad
+  flutter_blue: 9e65409fbf0037d732ba15991cc34cf42b816bda
   MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
   shared_preferences: 430726339841afefe5142b9c1f50cb6bd7793e01
