@@ -5,7 +5,7 @@
 * flutter_svg: ^0.14.3
 * flutter_blue: 0.6.2 (^0.6.3+1 crashes)
 * qr_code_scanner: ^0.0.12
-* shared_preferences: ^0.5.4+3
+* provider: ^3.1.0+1
 
 ## Getting started
 To install all needed node_modules and dependencies:
