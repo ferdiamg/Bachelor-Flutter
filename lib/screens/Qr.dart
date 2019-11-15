@@ -39,14 +39,9 @@ class _QrState extends State<Qr> {
                   ],
                 ),
               ),
-
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 80.0),
-              //   child: SvgPicture.asset('assets/qrmarker.svg', height: 290),
-              // ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 130.0),
-                child: Container(height: 250, child: QRViewExample()),
+                padding: const EdgeInsets.only(bottom: 110.0),
+                child: Container(height: 300, child: QRViewExample()),
               ),
             ],
           ),

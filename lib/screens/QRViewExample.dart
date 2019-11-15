@@ -22,19 +22,27 @@ class _QRViewExampleState extends State<QRViewExample> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Center(
-            child: Container(
-              height: 250,
-              width: 250,
-              child: QRView(
-                key: qrKey,
-                onQRViewCreated: _onQRViewCreated,
-                overlay: SvgPicture.asset('assets/qrmarker.svg', height: 250),
-              ),
+            child: Stack(
+              children: <Widget>[
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                      height: 225,
+                      width: 225,
+                      child: QRView(
+                        key: qrKey,
+                        onQRViewCreated: _onQRViewCreated,
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                    child:
+                        SvgPicture.asset('assets/qrmarker.svg', height: 290)),
+              ],
             ),
           ),
-          // Container(
-          //   height: 200,
-          // )
         ],
       ),
     );
