@@ -7,40 +7,47 @@ class Qr extends StatefulWidget {
   _QrState createState() => _QrState();
 }
 
-class _QrState extends State<Qr> {  
+class _QrState extends State<Qr> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-          child: Container(
+      child: Container(
         child: SizedBox.expand(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text(
-                "Place the QR code inside the area",
-                style: TextStyle(
-                    color: Color(0x4A4A4A).withOpacity(1),
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700),
-              ),
               Padding(
-                padding: const EdgeInsets.only(top: 5.0),
-                child: Text('Scanning will start automatically',
-                    style: TextStyle(
-                      color: Color(0xCFCFCF).withOpacity(1),
-                      fontSize: 16,
-                    )),
+                padding: const EdgeInsets.only(bottom: 120.0),
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      "Place the QR code inside the area",
+                      style: TextStyle(
+                          color: Color(0x4A4A4A).withOpacity(1),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5.0),
+                      child: Text('Scanning will start automatically',
+                          style: TextStyle(
+                            color: Color(0xCFCFCF).withOpacity(1),
+                            fontSize: 16,
+                          )),
+                    ),
+                  ],
+                ),
               ),
+
               // Padding(
               //   padding: const EdgeInsets.only(top: 80.0),
               //   child: SvgPicture.asset('assets/qrmarker.svg', height: 290),
               // ),
-              Expanded(
-                flex: 1,
-                child: QRViewExample(),
-              )
-              
+              Padding(
+                padding: const EdgeInsets.only(bottom: 130.0),
+                child: Container(height: 250, child: QRViewExample()),
+              ),
             ],
           ),
         ),
