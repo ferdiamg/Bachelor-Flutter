@@ -50,11 +50,11 @@ class _HomeState extends State<Home> {
         items: [
           FABBottomAppBarItem(
             svgPath: 'assets/ble.svg',
-            height: 25,
+            height: 23,
           ),
           FABBottomAppBarItem(
             svgPath: 'assets/qr.svg',
-            height: 31,
+            height: 29,
           ),
         ],
       ),

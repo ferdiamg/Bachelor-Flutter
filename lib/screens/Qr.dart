@@ -18,7 +18,7 @@ class _QrState extends State<Qr> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(bottom: 120.0),
+                padding: const EdgeInsets.only(bottom: 65.0),
                 child: Column(
                   children: <Widget>[
                     Text(
@@ -40,7 +40,7 @@ class _QrState extends State<Qr> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 110.0),
+                padding: const EdgeInsets.only(bottom: 85.0),
                 child: Container(height: 300, child: QRViewExample()),
               ),
             ],
