@@ -26,6 +26,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   flutter_blue: 0.6.2
   provider: ^3.1.0+1
+  animator: ^1.0.0+2
 
 dev_dependencies:
   flutter_test:

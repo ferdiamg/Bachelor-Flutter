@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'package:qr_code_scanner/qr_scanner_overlay_shape.dart';
+import 'package:animator/animator.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:io';
 
@@ -27,8 +27,7 @@ class _QRViewExampleState extends State<QRViewExample> {
                 Positioned.fill(
                   child: Align(
                     alignment: Alignment.center,
-                    child: AnimatedContainer(
-                      duration: Duration(seconds: 5),
+                    child: Container(
                       height: 225,
                       width: 225,
                       child: QRView(
@@ -39,13 +38,40 @@ class _QRViewExampleState extends State<QRViewExample> {
                   ),
                 ),
                 Center(
-                  child:
-                    SvgPicture.asset('assets/qrmarker.svg', height: 290)),
-                Container(
-                  height: 3,
-                  width: 300,
-                  color: Color(0x0076FF).withOpacity(1),
-                )
+                    child:
+                        SvgPicture.asset('assets/qrmarker.svg', height: 290)),
+                Animator(
+                  tween:
+                      Tween<Offset>(begin: Offset(0, -50), end: Offset(0, 50)),
+                  duration: Duration(seconds: 2),
+                  curve: Curves.decelerate,
+                  cycles: 0,
+                  builder: (anim) => FractionalTranslation(
+                    translation: anim.value,
+                    child: Container(
+                      height: 3,
+                      width: 300,
+                      decoration: new BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0x0076FF).withOpacity(0.15),
+                            blurRadius: 7.0,
+                            spreadRadius: 5.0,
+                            offset: Offset(
+                              0.0,
+                              5.0,
+                            ),
+                          )
+                        ],
+                      ),
+                      child: Container(
+                        height: 3,
+                        width: 300,
+                        color: Color(0x0076FF).withOpacity(1),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
