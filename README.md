@@ -6,6 +6,7 @@
 * flutter_blue: 0.6.2 (^0.6.3+1 crashes)
 * qr_code_scanner: ^0.0.12
 * provider: ^3.1.0+1
+* animator: ^1.0.0+2
 
 ## Getting started
 To install all needed node_modules and dependencies:
