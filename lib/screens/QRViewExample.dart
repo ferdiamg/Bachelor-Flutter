@@ -27,7 +27,8 @@ class _QRViewExampleState extends State<QRViewExample> {
                 Positioned.fill(
                   child: Align(
                     alignment: Alignment.center,
-                    child: Container(
+                    child: AnimatedContainer(
+                      duration: Duration(seconds: 5),
                       height: 225,
                       width: 225,
                       child: QRView(
@@ -38,8 +39,13 @@ class _QRViewExampleState extends State<QRViewExample> {
                   ),
                 ),
                 Center(
-                    child:
-                        SvgPicture.asset('assets/qrmarker.svg', height: 290)),
+                  child:
+                    SvgPicture.asset('assets/qrmarker.svg', height: 290)),
+                Container(
+                  height: 3,
+                  width: 300,
+                  color: Color(0x0076FF).withOpacity(1),
+                )
               ],
             ),
           ),
