@@ -40,34 +40,39 @@ class _QRViewExampleState extends State<QRViewExample> {
                 Center(
                     child:
                         SvgPicture.asset('assets/qrmarker.svg', height: 290)),
-                Animator(
-                  tween:
-                      Tween<Offset>(begin: Offset(0, -50), end: Offset(0, 50)),
-                  duration: Duration(seconds: 2),
-                  curve: Curves.decelerate,
-                  cycles: 0,
-                  builder: (anim) => FractionalTranslation(
-                    translation: anim.value,
-                    child: Container(
-                      height: 3,
-                      width: 300,
-                      decoration: new BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0x0076FF).withOpacity(0.15),
-                            blurRadius: 7.0,
-                            spreadRadius: 5.0,
-                            offset: Offset(
-                              0.0,
-                              5.0,
-                            ),
-                          )
-                        ],
-                      ),
-                      child: Container(
-                        height: 3,
-                        width: 300,
-                        color: Color(0x0076FF).withOpacity(1),
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Animator(
+                      tween: Tween<Offset>(
+                          begin: Offset(0, -50), end: Offset(0, 50)),
+                      duration: Duration(milliseconds: 1700),
+                      // curve: Curves.decelerate,
+                      cycles: 0,
+                      builder: (anim) => FractionalTranslation(
+                        translation: anim.value,
+                        child: Container(
+                          height: 2,
+                          width: 310,
+                          decoration: new BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color(0x0076FF).withOpacity(0.15),
+                                blurRadius: 7.0,
+                                spreadRadius: 3.0,
+                                offset: Offset(
+                                  0.0,
+                                  9.0,
+                                ),
+                              )
+                            ],
+                          ),
+                          child: Container(
+                            height: 1,
+                            width: 310,
+                            color: Color(0x0076FF).withOpacity(1),
+                          ),
+                        ),
                       ),
                     ),
                   ),
