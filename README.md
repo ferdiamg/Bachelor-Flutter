@@ -18,7 +18,3 @@ To install all needed node_modules and dependencies:
 * code signing needed in XCode
 * iOS 13 iOS needs AlwaysUsageBluetooth in info.plist when using BLE
 * same in Android
-
-## Todo
-Design:
-* QR View anpassen (animieren, Größe, etc.)
